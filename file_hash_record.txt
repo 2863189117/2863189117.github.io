@@ -1,13 +1,26 @@
-# 文件哈希值记录 - 更新时间: 2025-05-11 11:39:40
+# 文件哈希值记录 - 更新时间: 2025-05-11 13:49:01
 
 /Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/.trash/辐射的微观理论.md: 0cc3880d17b4443bab6a6c8d37dfc23c
-/Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/读书笔记/物理学/量子场论/Schwartz/辐射的微观理论.md: 29b944aa0c597e983e1a3d9ee4507218
+/Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/读书笔记/哲学/历史与阶级意识/历史与阶级意识：什么是正统马克思主义？.md: 203591dd5446a56bfa50aea41b6917a7
+/Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/读书笔记/哲学/历史与阶级意识/历史与阶级意识：作为马克思主义者的罗莎· 卢森堡.md: a043c7f60397ccfe8ab6fc7362b00e05
+/Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/读书笔记/哲学/历史与阶级意识/历史与阶级意识：序言.md: 9b339a3259641d0bbb5acfa4974a11e8
+/Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/读书笔记/哲学/导读萨特/为什么是萨特？.md: 18c2921ce0a2ae64fb05fe23ea79636c
+/Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/读书笔记/哲学/导读萨特/我们今天为什么需要导读书？.md: bb70881442cad9d06f4e5bba49ec8a7f
+/Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/读书笔记/哲学/导读萨特/第一章：意识.md: 2e72d0bb3f1d27504824b722dcfa61ec
+/Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/读书笔记/哲学/导读萨特/第二章：存在.md: c8ca8b5f8352397900e10935fbf9c854
+/Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/读书笔记/哲学/永夜微光 拉岡與未竟之精神分析革命/永夜微光：前言.md: 560b8183fdfde3d5dee829e101a09d49
+/Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/读书笔记/哲学/永夜微光 拉岡與未竟之精神分析革命/永夜微光：閱讀精神病與語言學的顛覆.md: 954c8862bfa8c5423990a8ad8a19681e
+/Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/读书笔记/哲学/西方哲学史 希尔贝克/智者派和苏格拉底.md: 03acaf35aecd6196bd1c4e3f271e2eb3
+/Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/读书笔记/哲学/西方哲学史 希尔贝克/西方哲学史：前苏格拉底哲学，附带浏览古代印度思想和古代中国思想.md: 3de456e4c1bde7b3857ca82116dfc5c0
+/Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/读书笔记/哲学/西方哲学史 希尔贝克/西方哲学史：导论.md: a2450850970273a4deb31f2067644de8
+/Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/读书笔记/物理学/量子场论/Schwartz/辐射的微观理论.md: f60d03eb894daff1834e6699e3c8a7ca
 /Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/课程笔记/哲学/西方马克思主义/历史哲学论纲/历史哲学论纲.md: 237cf33b0b5477f2f3cf8295334fa0f7
+/Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/课程笔记/哲学/西方马克思主义/萨特：方法问题/方法问题：马克思主义和存在主义.md: 079b863451514592c9563edcd6d0f47e
 /Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/课程笔记/物理学/广义相对论/一般静态各向同性度规与史瓦西解.md: 0bf05ee22c0f6b2ffdde93d54b1318bb
 /Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/课程笔记/物理学/广义相对论/作用量原理.md: 6924340a7aa1aef2ce3564f88be5925c
 /Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/课程笔记/物理学/广义相对论/史瓦西黑洞.md: 77a71ea41bf4681c6991187ae32a1206
 /Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/课程笔记/物理学/广义相对论/引力效应.md: d49c0c9e62e1c6bfb0427716a1418895
-/Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/课程笔记/物理学/广义相对论/引力辐射(Weinberg).md: bc0c71fe314fbfc2244251807fc909c1
+/Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/课程笔记/物理学/广义相对论/引力辐射(Weinberg).md: 1dac1b3874417058ce86a7c9d34f0119
 /Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/课程笔记/物理学/广义相对论/张量分析.md: b18d51bd1c966fc090b871776ed7573e
 /Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/课程笔记/物理学/广义相对论/曲率.md: c2df53d65706a68b6453cd9096cacb44
 /Users/pleiades/Library/Mobile Documents/iCloud~md~obsidian/Documents/Pleiades_02/课程笔记/物理学/广义相对论/爱因斯坦场方程.md: 6081fdd2b035824d69b8abc2f79ea240
