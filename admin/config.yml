@@ -1,79 +1,72 @@
 backend:
   name: github
   repo: 2863189117/2863189117.github.io
-
+  branch: main
+  base_url: https://decap-proxy.tonysmith1913.workers.dev # 您的 Worker URL
   
-publish_mode: editorial_workflow # 启用草稿和审核流程，推荐使用
+publish_mode: editorial_workflow # 启用草稿和审核流程
 
-media_folder: "assets/img/uploads" # 上传图片等媒体文件存储在仓库中的位置
-public_folder: "/assets/img/uploads" # 媒体文件在网站上的公共访问路径
+media_folder: "assets/img/uploads"
+public_folder: "/assets/img/uploads"
 
 collections:
-  - name: "posts" # 集合的内部名称
-    label: "博客文章" # 在 CMS 界面中显示的标签
+  - name: "posts"
+    label: "博客文章"
     label_singular: "博客文章"
-    folder: "_posts" # Jekyll 文章所在的文件夹
-    create: true # 允许在 CMS 中创建新文章
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # 新文章的文件名格式 (e.g., 2025-05-12-my-title.md)
-    path: "{{category}}/{{slug}}" # 文章在 _posts 文件夹下的完整路径结构，允许使用分类作为子文件夹
-                                   # 例如: _posts/Philosophy/Foundations of Logic/2025-05-12-my-title.md
-    fields: # 定义文章的元数据字段 (front matter) 和内容
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"} # Chirpy 主题文章通常的布局
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    path: "{{category}}/{{slug}}"
+    preview_path: "posts/{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "标题", name: "title", widget: "string"}
-      - {label: "发布日期", name: "date", widget: "datetime", default: ""}
-      - {label: "分类路径", name: "category", widget: "string", hint: "用于生成文件目录结构, 例如: Physics/GR"} # 强调此字段用于目录
-      - {label: "标签", name: "tags", widget: "list", optional: true}
-      # --- 新增字段开始 ---
-      - {label: "最后修改日期", name: "last_modified_at", widget: "datetime", optional: true, required: false}
-      - {label: "分类列表", name: "categories", widget: "list", hint: "文章的实际分类列表, 例如: [Physics, GR]", optional: true}
-      - {label: "启用数学公式 (MathJax)", name: "math", widget: "boolean", default: false, optional: true}
-      - {label: "最终版本", name: "final_version", widget: "boolean", default: false, optional: true}
-      - {label: "描述", name: "description", widget: "text", optional: true}
-      # --- 新增字段结束 ---
-      # --- Chirpy 主题可能需要的其他字段 ---
-      # 您可能需要根据 Chirpy 主题的文档添加其他字段，例如:
-      # - {label: "Author", name: "author", widget: "string", optional: true}
-      # - {label: "Table of Contents", name: "toc", widget: "boolean", default: true, optional: true}
-      # - {label: "Comments", name: "comments", widget: "boolean", default: true, optional: true}
-      # - {label: "MathJax", name: "math", widget: "boolean", default: false, optional: true} # 注意：上面已添加 math 字段
-      # - {label: "Mermaid", name: "mermaid", widget: "boolean", default: false, optional: true}
-      # ------------------------------------
+      - {label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss ZZ"}
+      - {label: "分类路径", name: "category", widget: "select", options: ["Physics/GR", "Physics/QFT", "Philosophy/Foundations of Logic", "Philosophy/History of Philosophy", "Philosophy/Western Marxism", "Philosophy/Psychoanalysis"], hint: "选择文章分类路径"}
+      - {label: "标签", name: "tags", widget: "select", options: ["note", "book-excerpt", "引力和宇宙学", "quantum-field-theory-and-the-standard-model"], multiple: true, optional: true}
+      - {label: "最后修改日期", name: "last_modified_at", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss ZZ", optional: true}
+      - {label: "分类列表", name: "categories", widget: "select", options: ["Physics", "GR", "QFT", "Philosophy", "Foundations of Logic", "History of Philosophy", "Western Marxism", "Psychoanalysis"], multiple: true}
+      - {label: "启用数学公式", name: "math", widget: "boolean", default: true}
+      - {label: "最终版本", name: "final_version", widget: "boolean", default: false}
+      - {label: "描述", name: "description", widget: "text", required: false}
       - {label: "正文", name: "body", widget: "markdown"}
 
   - name: "pages"
     label: "站点页面"
     label_singular: "站点页面"
-    files: # 用于管理 _tabs 文件夹下的固定页面
-      - label: "关于页面 (About)"
+    files:
+      - label: "关于页面"
         name: "about"
         file: "_tabs/about.md"
         fields:
-          - {label: "Layout", name: "layout", widget: "string", default: "page"}
-          - {label: "标题", name: "title", widget: "string"}
-          - {label: "固定链接 (Permalink)", name: "permalink", widget: "string", optional: true}
-          - {label: "图标 (Icon)", name: "icon", widget: "string", optional: true, hint: "例如: fas fa-user"}
+          - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
+          - {label: "图标", name: "icon", widget: "string", default: "fas fa-info-circle"}
+          - {label: "排序", name: "order", widget: "number", default: 4}
           - {label: "正文", name: "body", widget: "markdown"}
-      - label: "归档页面 (Archives)"
+
+      - label: "归档页面"
         name: "archives"
         file: "_tabs/archives.md"
         fields:
-          - {label: "Layout", name: "layout", widget: "string", default: "page"}
-          - {label: "标题", name: "title", widget: "string"}
-          - {label: "固定链接 (Permalink)", name: "permalink", widget: "string", optional: true}
+          - {label: "Layout", name: "layout", widget: "hidden", default: "archives"}
+          - {label: "图标", name: "icon", widget: "string", default: "fas fa-archive"}
+          - {label: "排序", name: "order", widget: "number", default: 3}
           - {label: "正文", name: "body", widget: "markdown"}
-      - label: "分类页面 (Categories)"
-        name: "categories_page" # CMS 内部唯一名称
+
+      - label: "分类页面"
+        name: "categories"
         file: "_tabs/categories.md"
         fields:
-          - {label: "Layout", name: "layout", widget: "string", default: "page"}
-          - {label: "标题", name: "title", widget: "string"}
-          - {label: "固定链接 (Permalink)", name: "permalink", widget: "string", optional: true}
+          - {label: "Layout", name: "layout", widget: "hidden", default: "categories"}
+          - {label: "图标", name: "icon", widget: "string", default: "fas fa-stream"}
+          - {label: "排序", name: "order", widget: "number", default: 1}
           - {label: "正文", name: "body", widget: "markdown"}
-      - label: "标签页面 (Tags)"
-        name: "tags_page_content" # CMS 内部唯一名称
+
+      - label: "标签页面"
+        name: "tags"
         file: "_tabs/tags.md"
         fields:
-          - {label: "Layout", name: "layout", widget: "string", default: "page"}
-          - {label: "标题", name: "title", widget: "string"}
-          - {label: "固定链接 (Permalink)", name: "permalink", widget: "string", optional: true}
+          - {label: "Layout", name: "layout", widget: "hidden", default: "tags"}
+          - {label: "图标", name: "icon", widget: "string", default: "fas fa-tags"}
+          - {label: "排序", name: "order", widget: "number", default: 2}
           - {label: "正文", name: "body", widget: "markdown"}
