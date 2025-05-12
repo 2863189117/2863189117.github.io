@@ -2,9 +2,9 @@ backend:
   name: github
   repo: 2863189117/2863189117.github.io
   branch: main
-  base_url: https://decap-proxy.tonysmith1913.workers.dev # 您的 Worker URL
+  base_url: https://decap-proxy.tonysmith1913.workers.dev
   
-publish_mode: editorial_workflow # 启用草稿和审核流程
+publish_mode: editorial_workflow
 
 media_folder: "assets/img/uploads"
 public_folder: "/assets/img/uploads"
