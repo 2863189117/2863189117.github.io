@@ -8,7 +8,14 @@
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
-    CMS.init();
+    // 等待 Decap CMS 脚本完全加载
+    if (window.CMS) {
+      CMS.init();
+    } else {
+      window.addEventListener('load', function() {
+        CMS.init();
+      });
+    }
   </script>
 </body>
 </html>
