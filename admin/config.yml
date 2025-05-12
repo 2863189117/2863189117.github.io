@@ -2,10 +2,11 @@ backend:
   name: github
   repo: 2863189117/2863189117.github.io # 请确认为您的 GitHub 用户名/仓库名
   branch: main # 请确认为您的默认分支名 (例如 main 或 master)
-  # --- 添加以下两行来使用您自己的 OAuth Client ID ---
   use_implicit_oauth: true
   app_id: Ov23li9dAWbrzI85iU8e # <--- 在这里粘贴您从 GitHub 获取的 Client ID
   site_domain: 2863189117.github.io # 您的 GitHub Pages 域名
+  base_url: https://api.github.com # 显式指定使用 GitHub API
+  auth_endpoint: https://github.com/login/oauth/authorize # 显式指定 GitHub OAuth 端点
 
 publish_mode: editorial_workflow # 启用草稿和审核流程，推荐使用
 
