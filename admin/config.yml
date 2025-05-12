@@ -3,6 +3,8 @@ backend:
   repo: 2863189117/2863189117.github.io
   branch: main
   base_url: https://decap-proxy.tonysmith1913.workers.dev
+  auth_endpoint: auth
+  site_domain: 2863189117.github.io
   
 publish_mode: editorial_workflow
 
