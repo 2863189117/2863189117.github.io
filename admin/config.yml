@@ -8,67 +8,97 @@ backend:
   
 publish_mode: editorial_workflow
 
-media_folder: "assets/img/uploads"
-public_folder: "/assets/img/uploads"
+media_folder: "assets/img" # Path in the repo where media will be stored.
+public_folder: "/assets/img" # Publicly accessible path for media.
 
+# Content Collections: Defines the types of content that can be managed.
 collections:
+  # Collection for Blog Posts (_posts/)
   - name: "posts"
     label: "博客文章"
     label_singular: "博客文章"
-    folder: "_posts"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    path: "{{category}}/{{slug}}"
-    preview_path: "posts/{{slug}}"
+    folder: "_posts" # Content is stored in the _posts directory.
+    create: true # Allows creating new posts. [3]
+    # Path templating for nested directory structure.
+    # This uses 'main_category' and 'sub_category' fields to build the path.
+    path: "{{fields.main_category}}/{{fields.sub_category}}/{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename structure for new posts. [1]
     fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "标题", name: "title", widget: "string"}
-      - {label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss ZZ"}
-      - {label: "分类路径", name: "category", widget: "select", options: ["Physics/GR", "Physics/QFT", "Philosophy/Foundations of Logic", "Philosophy/History of Philosophy", "Philosophy/Western Marxism", "Philosophy/Psychoanalysis"], hint: "选择文章分类路径"}
-      - {label: "标签", name: "tags", widget: "select", options: ["note", "book-excerpt", "引力和宇宙学", "quantum-field-theory-and-the-standard-model"], multiple: true, optional: true}
-      - {label: "最后修改日期", name: "last_modified_at", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss ZZ", optional: true}
-      - {label: "分类列表", name: "categories", widget: "select", options: ["Physics", "GR", "QFT", "Philosophy", "Foundations of Logic", "History of Philosophy", "Western Marxism", "Psychoanalysis"], multiple: true}
-      - {label: "启用数学公式", name: "math", widget: "boolean", default: true}
-      - {label: "最终版本", name: "final_version", widget: "boolean", default: false}
-      - {label: "描述", name: "description", widget: "text", required: false}
-      - {label: "正文", name: "body", widget: "markdown"}
+      - {label: "布局", name: "layout", widget: "string", default: "post", required: false}
+      - {label: "主分类", name: "main_category", widget: "string"} # Used in 'path'. Consider 'select' widget for predefined categories.
+      - {label: "子分类", name: "sub_category", widget: "string"} # Used in 'path'. Consider 'select' widget.
+      - {label: "发布日期", name: "date", widget: "datetime"}
+      - {label: "Jekyll 分类", name: "categories", widget: "list", field: {label: "分类", name: "category", widget: "string"}, required: false} # [5]
+      - {label: "Jekyll 标签", name: "tags", widget: "list", field: {label: "标签", name: "tag", widget: "string"}, required: false} # [5]
+      - {label: "摘要", name: "excerpt", widget: "text", required: false}
+      - {label: "内容", name: "body", widget: "markdown"}
+    editor:
+      preview: true
+  # Collection for Static Pages/Tabs (_tabs/)
+  - name: "tabs"
+    label: "静态页面 (Tabs)"
+    label_singular: "页面"
+    folder: "_tabs" # Content is stored in the _tabs directory.
+    create: true # Allows creating new pages.
+    slug: "{{slug}}" # Filename will be slug.md.
+    extension: "md" 
+    identifier_field: "filename" # Use filename for identity instead of title
+    summary: "{{filename}}" # Display filename in the collection list
+    fields:
+      - {label: "图标", name: "icon", widget: "string", required: false}
+      - {label: "排序", name: "order", widget: "number", required: false}
+      - {label: "布局", name: "layout", widget: "hidden", default: "page", required: false}
+      - {label: "固定链接", name: "permalink", widget: "string", required: false}
+      - {label: "内容", name: "body", widget: "markdown"}
 
-  - name: "pages"
-    label: "站点页面"
-    label_singular: "站点页面"
+  # Collection for _data/authors.yml
+  - name: "authors_data"
+    label: "作者数据"
+    files: # This is a 'file' collection for a single data file. [6]
+      - label: "作者信息"
+        name: "authors" # Internal name for this file entry.
+        file: "_data/authors.yml" # Path to the YAML file.
+        fields:
+          - label: "作者列表"
+            name: "authors" # Corresponds to the top-level key in authors.yml, if it exists.
+            widget: "list" # Manages a list of authors. [5]
+            fields: # Fields for each author in the list.
+              - {label: "姓名", name: "name", widget: "string"}
+              - {label: "简介", name: "bio", widget: "text", required: false}
+              - {label: "头像 URL", name: "avatar", widget: "image", required: false} # 'image' widget provides an uploader.
+
+  # Collection for _data/contact.yml
+  - name: "contact_data"
+    label: "联系信息数据"
     files:
-      - label: "关于页面"
-        name: "about"
-        file: "_tabs/about.md"
-        fields:
-          - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
-          - {label: "图标", name: "icon", widget: "string", default: "fas fa-info-circle"}
-          - {label: "排序", name: "order", widget: "number", default: 4}
-          - {label: "正文", name: "body", widget: "markdown"}
+      - label: "联系方式"
+        name: "contact"
+        file: "_data/contact.yml"
+        fields: # These fields should directly map to keys in your contact.yml.
+          - {label: "邮箱", name: "email", widget: "string", required: false}
+          - {label: "电话", name: "phone", widget: "string", required: false}
+          - {label: "地址", name: "address", widget: "text", required: false}
+          # Add more fields as per your contact.yml structure.
+          # If 'address' is an object:
+          # - {label: "地址对象", name: "address_object", widget: "object", fields: [
+          #     {label: "街道", name: "street", widget: "string"},
+          #     {label: "城市", name: "city", widget: "string"}
+          #   ]}
 
-      - label: "归档页面"
-        name: "archives"
-        file: "_tabs/archives.md"
-        fields:
-          - {label: "Layout", name: "layout", widget: "hidden", default: "archives"}
-          - {label: "图标", name: "icon", widget: "string", default: "fas fa-archive"}
-          - {label: "排序", name: "order", widget: "number", default: 3}
-          - {label: "正文", name: "body", widget: "markdown"}
-
-      - label: "分类页面"
-        name: "categories"
-        file: "_tabs/categories.md"
-        fields:
-          - {label: "Layout", name: "layout", widget: "hidden", default: "categories"}
-          - {label: "图标", name: "icon", widget: "string", default: "fas fa-stream"}
-          - {label: "排序", name: "order", widget: "number", default: 1}
-          - {label: "正文", name: "body", widget: "markdown"}
-
-      - label: "标签页面"
-        name: "tags"
-        file: "_tabs/tags.md"
-        fields:
-          - {label: "Layout", name: "layout", widget: "hidden", default: "tags"}
-          - {label: "图标", name: "icon", widget: "string", default: "fas fa-tags"}
-          - {label: "排序", name: "order", widget: "number", default: 2}
-          - {label: "正文", name: "body", widget: "markdown"}
+  # Collection for _data/share.yml
+  - name: "share_data"
+    label: "分享链接数据"
+    files:
+      - label: "社交分享链接"
+        name: "share_links" # Corresponds to the top-level key in share.yml, if it exists.
+        file: "_data/share.yml"
+        fields: # Adjust these fields based on the actual structure of your share.yml.
+          - label: "社交平台"
+            name: "platforms" # Assuming share.yml has a list named 'platforms'.
+            widget: "list"
+            required: false
+            fields:
+              - {label: "平台名称", name: "name", widget: "string"} # e.g., Twitter, Facebook
+              - {label: "链接 URL", name: "url", widget: "string"}
+              - {label: "图标 (可选)", name: "icon", widget: "string", required: false}
