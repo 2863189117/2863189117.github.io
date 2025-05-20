@@ -1,0 +1,324 @@
+/* 
+ * 自定义样式文件 - 扩展Chirpy主题样式
+ */
+
+// 导入自定义变量不再需要，因为已在主样式文件中优先导入
+
+// 文章卡片样式优化
+.card {
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $box-shadow-lg;
+  }
+  
+  .card-header {
+    background-color: rgba($primary-color, 0.05);
+    border-bottom: 2px solid rgba($primary-color, 0.1);
+    padding: 1rem;
+    
+    h1 {
+      font-family: $font-family-heading;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      
+      a {
+        color: $primary-color;
+        text-decoration: none;
+        
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+  
+  .card-body {
+    padding: 1.25rem;
+    
+    .post-meta {
+      color: rgba(#000, 0.6);
+      font-size: $font-size-sm;
+      margin-bottom: 0.75rem;
+      
+      span {
+        margin-right: 0.75rem;
+      }
+      
+      i {
+        margin-right: 0.25rem;
+        color: $tertiary-color;
+      }
+    }
+    
+    .post-content {
+      font-family: $font-family-base;
+      line-height: $line-height-base;
+      color: rgba(#000, 0.85);
+      
+      p {
+        margin-bottom: $paragraph-spacing;
+      }
+    }
+    
+    .post-tags {
+      margin-top: 1rem;
+      
+      a {
+        display: inline-block;
+        background-color: rgba($tertiary-color, 0.1);
+        color: $tertiary-color;
+        padding: 0.25rem 0.75rem;
+        border-radius: 1rem;
+        font-size: $font-size-xs;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+        
+        &:hover {
+          background-color: rgba($tertiary-color, 0.2);
+        }
+      }
+    }
+  }
+}
+
+// 导航栏样式优化
+#sidebar {
+  background: linear-gradient(to bottom, $primary-color, darken($primary-color, 10%));
+  
+  .site-title {
+    font-family: $font-family-heading;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  
+  .site-subtitle {
+    font-family: $font-family-base;
+    font-style: italic;
+    opacity: 0.8;
+  }
+  
+  .nav-link {
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border-radius: $border-radius-sm;
+    margin: 0.25rem 0;
+    
+    &:hover {
+      background-color: rgba(white, 0.1);
+    }
+    
+    &.active {
+      background-color: $secondary-color;
+      color: white;
+    }
+  }
+}
+
+// 文章页面样式优化
+.post {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-heading;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: $primary-color;
+  }
+  
+  h1 {
+    font-size: $h1-font-size;
+    border-bottom: 2px solid rgba($primary-color, 0.1);
+    padding-bottom: 0.5rem;
+  }
+  
+  h2 {
+    font-size: $h2-font-size;
+  }
+  
+  h3 {
+    font-size: $h3-font-size;
+  }
+  
+  h4 {
+    font-size: $h4-font-size;
+  }
+  
+  p {
+    font-family: $font-family-base;
+    line-height: $line-height-base;
+    margin-bottom: $paragraph-spacing;
+  }
+  
+  blockquote {
+    border-left: 4px solid $secondary-color;
+    background-color: rgba($secondary-color, 0.05);
+    padding: 1rem;
+    margin: 1.5rem 0;
+    
+    p {
+      margin-bottom: 0;
+    }
+  }
+  
+  code {
+    font-family: $font-family-code;
+    background-color: rgba($tertiary-color, 0.1);
+    color: $tertiary-color;
+    padding: 0.2rem 0.4rem;
+    border-radius: $border-radius-sm;
+  }
+  
+  pre {
+    background-color: #2d2d2d;
+    border-radius: $border-radius;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    
+    code {
+      background-color: transparent;
+      color: #f8f8f2;
+      padding: 0;
+    }
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: $border-radius;
+    margin: 1.5rem 0;
+    box-shadow: $box-shadow;
+  }
+  
+  .footnotes {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(#000, 0.1);
+    
+    ol {
+      font-size: $font-size-sm;
+    }
+  }
+}
+
+// 目录样式优化
+#toc-wrapper {
+  border-radius: $border-radius;
+  background-color: rgba($primary-color, 0.03);
+  border: 1px solid rgba($primary-color, 0.1);
+  padding: 1.25rem;
+  
+  .toc-title {
+    font-family: $font-family-heading;
+    font-weight: 600;
+    color: $primary-color;
+    margin-bottom: 1rem;
+  }
+  
+  #toc {
+    ul {
+      list-style-type: none;
+      padding-left: 1rem;
+      
+      li {
+        margin-bottom: 0.5rem;
+        
+        a {
+          color: rgba(#000, 0.75);
+          text-decoration: none;
+          transition: color 0.2s ease;
+          
+          &:hover {
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 页脚样式优化
+#footer {
+  background-color: rgba($primary-color, 0.05);
+  border-top: 1px solid rgba($primary-color, 0.1);
+  padding: 1.5rem 0;
+  
+  .footer-content {
+    font-family: $font-family-base;
+    font-size: $font-size-sm;
+    color: rgba(#000, 0.6);
+  }
+}
+
+// 响应式优化
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 1rem;
+  }
+  
+  h1 {
+    font-size: $h1-font-size * 0.85;
+  }
+  
+  h2 {
+    font-size: $h2-font-size * 0.85;
+  }
+  
+  h3 {
+    font-size: $h3-font-size * 0.85;
+  }
+}
+
+// 暗色模式适配
+@media (prefers-color-scheme: dark) {
+  :root[data-mode="dark"] {
+    .card {
+      background-color: lighten($dark-bg, 5%);
+      
+      .card-header {
+        background-color: rgba($primary-color, 0.2);
+      }
+      
+      .card-body {
+        .post-content {
+          color: rgba(white, 0.85);
+        }
+        
+        .post-meta {
+          color: rgba(white, 0.6);
+        }
+      }
+    }
+    
+    .post {
+      h1, h2, h3, h4, h5, h6 {
+        color: lighten($primary-color, 25%);
+      }
+      
+      blockquote {
+        background-color: rgba($secondary-color, 0.1);
+      }
+    }
+    
+    #toc-wrapper {
+      background-color: rgba($primary-color, 0.1);
+      
+      #toc ul li a {
+        color: rgba(white, 0.75);
+      }
+    }
+    
+    #footer {
+      background-color: rgba($primary-color, 0.1);
+      
+      .footer-content {
+        color: rgba(white, 0.6);
+      }
+    }
+  }
+}

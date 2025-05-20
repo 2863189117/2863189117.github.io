@@ -1,0 +1,50 @@
+/* 
+ * 自定义变量文件 - 重写Chirpy主题默认变量
+ * 注意：此文件需要在主题样式之前导入，才能覆盖默认值
+ */
+
+/* 配色方案 */
+$primary-color: #1a3a63;      // 深蓝色 - 主色调
+$secondary-color: #d68c45;    // 暖赭石色 - 辅助色
+$tertiary-color: #2a9d8f;     // 青绿色 - 强调色
+$light-bg: #f8f5f2;           // 米白色 - 亮色模式背景
+$dark-bg: #1e2a3a;            // 深灰蓝 - 暗色模式背景
+
+/* 字体设置 */
+$font-family-base: 'Noto Serif SC', 'Source Han Serif SC', serif;
+$font-family-heading: 'Noto Sans SC', 'Source Han Sans SC', sans-serif;
+$font-family-code: 'JetBrains Mono', 'Courier New', monospace;
+
+/* 字体大小 */
+$font-size-root: 16px;
+$font-size-base: 1rem;
+$font-size-sm: 0.875rem;
+$font-size-xs: 0.75rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 1.5rem;
+
+/* 标题字体大小 */
+$h1-font-size: 2.25rem;
+$h2-font-size: 1.8rem;
+$h3-font-size: 1.5rem;
+$h4-font-size: 1.25rem;
+$h5-font-size: 1.1rem;
+$h6-font-size: 1rem;
+
+/* 行高 */
+$line-height-base: 1.8;
+$line-height-heading: 1.5;
+
+/* 间距 */
+$spacer: 1rem;
+$paragraph-spacing: 1.5rem;
+$section-spacing: 3rem;
+
+/* 圆角 */
+$border-radius: 0.375rem;
+$border-radius-lg: 0.5rem;
+$border-radius-sm: 0.25rem;
+
+/* 阴影 */
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$box-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);

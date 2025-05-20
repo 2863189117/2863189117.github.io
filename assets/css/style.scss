@@ -1,0 +1,11 @@
+---
+---
+
+/* 先导入自定义变量，确保它们能覆盖主题默认值 */
+@import "custom/variables";
+
+/* 然后导入主题样式 */
+@import "main";
+
+/* 最后导入自定义样式，用于扩展和覆盖主题样式 */
+@import "custom/custom";
